@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lawyer Finder</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('index.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.body.insertAdjacentHTML('afterbegin', data);
+                });
+
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.body.insertAdjacentHTML('beforeend', data);
+                });
+        });
+    </script>
+</head>
+<body>
+    <main>
+        <section id="lawyer-finder">
+            <div class="container">
+                <h2>Lawyer Finder</h2>
+                <form id="lawyer-finder-form">
+                    <label for="specialty">Specialty</label>
+                    <input type="text" id="specialty" name="specialty">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" name="location">
+                    <button type="submit">Find Lawyers</button>
+                </form>
+                <div id="lawyer-list">
+                    <div class="lawyer-list-item">
+                        <h3>Lawyer 1</h3>
+                        <p>Specialty: Criminal Law</p>
+                        <p>Location: New York</p>
+                    </div>
+                    <div class="lawyer-list-item">
+                        <h3>Lawyer 2</h3>
+                        <p>Specialty: Corporate Law</p>
+                        <p>Location: San Francisco</p>
+                    </div>
+                    <!-- Add more lawyers as needed -->
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="assets/js/scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

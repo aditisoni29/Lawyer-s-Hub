@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Generator</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('index.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.body.insertAdjacentHTML('afterbegin', data);
+                });
+
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.body.insertAdjacentHTML('beforeend', data);
+                });
+        });
+    </script>
+</head>
+<body>
+    <main>
+        <section id="document-generator">
+            <div class="container">
+                <h2>Document Generator</h2>
+                <form id="document-form">
+                    <label for="doc-type">Document Type</label>
+                    <input type="text" id="doc-type" name="doc-type">
+                    <label for="client-name">Client Name</label>
+                    <input type="text" id="client-name" name="client-name">
+                    <button type="submit">Generate</button>
+                </form>
+                <p id="document-output"></p>
+            </div>
+        </section>
+    </main>
+    <script src="assets/js/scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

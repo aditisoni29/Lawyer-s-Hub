@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Case Analytics</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('index.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.body.insertAdjacentHTML('afterbegin', data);
+                });
+
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.body.insertAdjacentHTML('beforeend', data);
+                });
+        });
+    </script>
+</head>
+<body>
+    <main>
+        <section id="client-analytics">
+            <div class="container">
+                <h2>Client Case Analytics</h2>
+                <div id="analytics-dashboard">
+                    <div class="analytics-card">
+                        <h3>Number of Cases</h3>
+                        <p>10</p>
+                    </div>
+                    <div class="analytics-card">
+                        <h3>Cases Won</h3>
+                        <p>7</p>
+                    </div>
+                    <div class="analytics-card">
+                        <h3>Cases Lost</h3>
+                        <p>3</p>
+                    </div>
+                    <!-- Add more analytics cards as needed -->
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="assets/js/scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

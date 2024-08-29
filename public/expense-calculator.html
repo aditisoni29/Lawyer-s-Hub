@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Expense Calculator</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('index.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.body.insertAdjacentHTML('afterbegin', data);
+                });
+
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.body.insertAdjacentHTML('beforeend', data);
+                });
+        });
+    </script>
+</head>
+<body>
+    <main>
+        <section id="expense-calculator">
+            <div class="container">
+                <h2>Legal Expense Calculator</h2>
+                <form id="expense-form">
+                    <label for="hours">Hours Worked</label>
+                    <input type="number" id="hours" name="hours" min="0">
+                    <label for="rate">Hourly Rate</label>
+                    <input type="number" id="rate" name="rate" min="0">
+                    <label for="misc">Miscellaneous Expenses</label>
+                    <input type="number" id="misc" name="misc" min="0">
+                    <button type="submit">Calculate</button>
+                </form>
+                <p id="total-expense"></p>
+            </div>
+        </section>
+    </main>
+    <script src="assets/js/scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

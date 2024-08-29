@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Dashboard</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('index.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.body.insertAdjacentHTML('afterbegin', data);
+                });
+
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.body.insertAdjacentHTML('beforeend', data);
+                });
+        });
+    </script>
+</head>
+<body>
+    <main>
+        <section id="client-dashboard">
+            <div class="container">
+                <h2>Client Dashboard</h2>
+                <div class="dashboard-card">
+                    <h3>Case Status</h3>
+                    <p>Active</p>
+                </div>
+                <div class="dashboard-card">
+                    <h3>Upcoming Hearings</h3>
+                    <p>Next hearing on 25th July 2024</p>
+                </div>
+                <!-- Add more dashboard cards as needed -->
+            </div>
+        </section>
+    </main>
+    <script src="assets/js/scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

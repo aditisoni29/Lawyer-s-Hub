@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - Lawyer's Hub</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('index.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.body.insertAdjacentHTML('afterbegin', data);
+                });
+
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.body.insertAdjacentHTML('beforeend', data);
+                });
+        });
+    </script>
+    <main>
+        <section class="team-section">
+            <h1>Our Team</h1>
+            <p>Meet the talented individuals.</p>
+            <div class="team-container">
+                <div class="team-member">
+                    <img src="assets/img/Team-member-1.svg" alt="Team Member 1">
+                    <h3>Arvind Soni</h3>
+                    <p>Founder & CEO</p>
+                </div>
+                <div class="team-member">
+                    <img src="assets/images/team-member2.jpg" alt="Team Member 2">
+                    <h3>Jane Smith</h3>
+                    <p>Chief Legal Officer</p>
+                </div>
+                <div class="team-member">
+                    <img src="assets/images/team-member3.jpg" alt="Team Member 3">
+                    <h3>Emily Johnson</h3>
+                    <p>Head of Operations</p>
+                </div>
+                <!-- Add more team members as needed -->
+            </div>
+        </section>
+    </main>
+</body>
+</html>
